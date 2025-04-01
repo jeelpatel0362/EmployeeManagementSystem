@@ -8,12 +8,7 @@ interface Assignable {
     fun assign(project: Project)
 }
 
-data class Employee(
-    override val id: Int,
-    override val name: String,
-    val age: Int,
-    val department: String
-) : Person(id, name), Assignable {
+data class Employee(override val id: Int,override val name: String,val age: Int,val department: String) : Person(id, name), Assignable {
 
     private val projects = mutableListOf<Project>()
 
